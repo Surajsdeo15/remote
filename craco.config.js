@@ -35,7 +35,7 @@ module.exports = {
         webpackConfig.output = {};
       }
       // Use 'auto' for development, explicit path for production
-      const remoteUrl = process.env.REACT_APP_REMOTE_URL || 'http://localhost:3001';
+      const remoteUrl = 'https://remote-five-zeta.vercel.app'|| 'http://localhost:3001';
       webpackConfig.output.publicPath = process.env.NODE_ENV === 'production' 
         ? `${remoteUrl}/` 
         : 'auto';
