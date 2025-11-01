@@ -26,19 +26,25 @@ module.exports = {
               requiredVersion: false,
               eager: true,
             },
+            'react-router-dom': {
+              singleton: true,
+              requiredVersion: false,
+              eager: true,
+            },
           },
         })
       );
       
-      // Ensure output is set correctly
-      if (!webpackConfig.output) {
-        webpackConfig.output = {};
+      // Configure publicPath for Module Federation (Production only)
+      // Development: Webpack dev server handles this automatically
+      // Production: Need explicit URL for chunks to load from CDN/deployed domain
+      if (process.env.NODE_ENV === 'production') {
+        if (!webpackConfig.output) {
+          webpackConfig.output = {};
+        }
+        const remoteUrl = process.env.REACT_APP_REMOTE_URL || 'https://remote-five-zeta.vercel.app';
+        webpackConfig.output.publicPath = `${remoteUrl}/`;
       }
-      // Use 'auto' for development, explicit path for production
-      const remoteUrl = 'https://remote-five-zeta.vercel.app'|| 'http://localhost:3001';
-      webpackConfig.output.publicPath = process.env.NODE_ENV === 'production' 
-        ? `${remoteUrl}/` 
-        : 'auto';
       
       return webpackConfig;
     },
