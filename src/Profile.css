@@ -1,0 +1,65 @@
+.remote-profile-container {
+  width: 100%;
+}
+
+.remote-profile-card {
+  background: white;
+  border: 2px solid #48bb78;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.remote-profile-card h2 {
+  color: #48bb78;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.8em;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+.profile-info {
+  background: #f7fafc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.info-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #4a5568;
+  font-size: 16px;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-item strong {
+  color: #48bb78;
+  margin-right: 10px;
+  display: inline-block;
+  min-width: 120px;
+}
+
+.profile-badge {
+  margin-top: 20px;
+  text-align: center;
+  padding: 12px;
+  background: #edf2f7;
+  border-radius: 8px;
+  border-left: 4px solid #48bb78;
+}
+
+.profile-badge span {
+  color: #48bb78;
+  font-weight: 600;
+  font-size: 14px;
+}
+

@@ -1,46 +1,86 @@
-# Getting Started with Create React App
+# Remote Application - Microfrontend Architecture
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the **Remote Application** built with **Create React App (CRA)** that exposes components via Module Federation.
 
-## Available Scripts
+## 🚀 Quick Start
 
-In the project directory, you can run:
+### Development
+```bash
+npm install
+npm start
+```
+Runs on http://localhost:3001
 
-### `npm start`
+### Production Build
+```bash
+npm run build
+npm run serve
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 📦 Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Create React App (CRA) + TypeScript
+- Module Federation plugin (CRACO)
+- React Router for routing
+- Exposes App and Profile components
+- Standalone application
 
-### `npm test`
+## 🔧 Environment Variables
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Create `.env` file (see `.env.example` for reference):
 
-### `npm run build`
+```env
+REACT_APP_NAME=Remote Application
+PORT=3001
+BROWSER=none
+REACT_APP_MODULE_FEDERATION_NAME=remote
+REACT_APP_REMOTE_ENTRY_FILE=remoteEntry.js
+REACT_APP_API_URL=https://dummyjson.com
+REACT_APP_ENV=development
+REACT_APP_REMOTE_URL=http://localhost:3001
+REACT_APP_ALLOWED_ORIGINS=http://localhost:3000
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📝 Scripts
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `npm start` - Start development server
+- `npm run build` - Build for production
+- `npm run serve` - Serve production build
+- `npm test` - Run tests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚢 Deployment
 
-### `npm run eject`
+### Deploy to Vercel
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Push this repository to GitHub
+2. Import project in Vercel
+3. Set environment variables in Vercel dashboard
+4. Configure build settings:
+   - Build Command: `npm run build`
+   - Output Directory: `build`
+5. Deploy!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Important**: Deploy this remote app FIRST before deploying the host app!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+See [DEPLOYMENT.md](../DEPLOYMENT.md) for detailed instructions.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 📁 Project Structure
 
-## Learn More
+```
+remote/
+├── src/
+│   ├── App.tsx
+│   ├── Profile.tsx
+│   ├── bootstrap.tsx
+│   └── index.tsx
+├── craco.config.js
+└── package.json
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔗 Module Federation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This app exposes:
+- `./App` - Main application component
+- `./Profile` - Profile page component
+
+These components are consumed by the host application via Module Federation.

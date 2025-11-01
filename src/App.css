@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+.remote-container {
+  flex: 1;
+  min-width: 300px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.remote-card {
+  background: white;
+  border: 2px solid #48bb78;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.remote-card h2 {
+  color: #48bb78;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.5em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.remote-card p {
+  color: #333;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+.remote-features {
+  background: #f7fafc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.feature-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #4a5568;
+}
+
+.feature-item:last-child {
+  border-bottom: none;
+}
+
+.feature-item strong {
+  color: #48bb78;
+  margin-right: 8px;
+}
+
+.remote-description {
+  background: #edf2f7;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #48bb78;
+  font-style: italic;
+  color: #2d3748;
+}
+
+.profile-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
   color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.profile-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(72, 187, 120, 0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile-button:active {
+  transform: translateY(0);
 }
