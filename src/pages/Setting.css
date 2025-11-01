@@ -1,0 +1,83 @@
+.page-container {
+  padding: 2rem;
+  min-height: calc(100vh - 80px);
+}
+
+.page-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-card h1 {
+  color: #48bb78;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.page-card > p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.settings-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.settings-section h2 {
+  color: #48bb78;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-item label {
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.setting-item select,
+.setting-item input[type="checkbox"] {
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.setting-item select {
+  min-width: 150px;
+  background: white;
+}
+
+.setting-item select:focus {
+  outline: none;
+  border-color: #48bb78;
+}
+
+.setting-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
